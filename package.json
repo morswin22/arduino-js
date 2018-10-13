@@ -48,6 +48,6 @@
   },
   "version": "0.1.0",
   "dependencies": {
-    "johnny-five": "^1.0.0"
+    "johnny-five": "latest"
   }
 }
