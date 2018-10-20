@@ -31,123 +31,98 @@ board.on("ready", () => {
   fistSection();
   secondSection();
 
+  play(f, 250);  
+  play(gS, 500);  
+  play(f, 350);  
+  play(a, 125);
+  play(cH, 500);
+  play(a, 375);  
+  play(cH, 125);
+  play(eH, 650);
   
+  setTimeout(500);
+
+  secondSection();
+
+  play(f, 250);  
+  play(gS, 500);  
+  play(f, 375);  
+  play(cH, 125);
+  play(a, 500);  
+  play(f, 375);  
+  play(cH, 125);
+  play(a, 650);  
+
+  setTimeout(650);
+
+
+
+  function play(note, duration) {
+    buzzer.frequency(note, duration);
+
+    if (counter % 2 == 0) {
+      led1.on();
+      setTimeout(duration);
+      led1.off();
+    } else {
+      led2.on();
+      setTimeout(duration);
+      led2.off();
+    }
+
+    setTimeout(50);
+
+    counter++;
+  }
+
+  function firstSection() {
+    play(a, 500);
+    play(a, 500);    
+    play(a, 500);
+    play(f, 350);
+    play(cH, 150);  
+    play(a, 500);
+    play(f, 350);
+    play(cH, 150);
+    play(a, 650);
+
+    setTimeout(500);
+
+    play(eH, 500);
+    play(eH, 500);
+    play(eH, 500);  
+    play(fH, 350);
+    play(cH, 150);
+    play(gS, 500);
+    play(f, 350);
+    play(cH, 150);
+    play(a, 650);
+
+    setTimeout(500);
+  } 
+
+  function secondSection() {
+    play(aH, 500);
+    play(a, 300);
+    play(a, 150);
+    play(aH, 500);
+    play(gSH, 325);
+    play(gH, 175);
+    play(fSH, 125);
+    play(fH, 125);    
+    play(fSH, 250);
+
+    setTimeout(325);
+
+    play(aS, 250);
+    play(dSH, 500);
+    play(dH, 325);  
+    play(cSH, 175);  
+    play(cH, 125);  
+    play(b, 125);  
+    play(cH, 250);  
+
+    setTimeout(350);
+  }
+
 }); 
-
-
-
-// void loop()
-// {
-
-//   //Play first section
-//   firstSection();
-
-//   //Play second section
-//   secondSection();
-
-//   //Variant 1
-//   beep(f, 250);  
-//   beep(gS, 500);  
-//   beep(f, 350);  
-//   beep(a, 125);
-//   beep(cH, 500);
-//   beep(a, 375);  
-//   beep(cH, 125);
-//   beep(eH, 650);
-
-//   delay(500);
-
-//   //Repeat second section
-//   secondSection();
-
-//   //Variant 2
-//   beep(f, 250);  
-//   beep(gS, 500);  
-//   beep(f, 375);  
-//   beep(cH, 125);
-//   beep(a, 500);  
-//   beep(f, 375);  
-//   beep(cH, 125);
-//   beep(a, 650);  
-
-//   delay(650);
-// }
-
-// void beep(int note, int duration)
-// {
-//   //Play tone on buzzerPin
-//   tone(buzzerPin, note, duration);
-
-//   //Play different LED depending on value of 'counter'
-//   if(counter % 2 == 0)
-//   {
-//     digitalWrite(ledPin1, HIGH);
-//     delay(duration);
-//     digitalWrite(ledPin1, LOW);
-//   }else
-//   {
-//     digitalWrite(ledPin2, HIGH);
-//     delay(duration);
-//     digitalWrite(ledPin2, LOW);
-//   }
-
-//   //Stop tone on buzzerPin
-//   noTone(buzzerPin);
-
-//   delay(50);
-
-//   //Increment counter
-//   counter++;
-// }
-
-// void firstSection()
-// {
-//   beep(a, 500);
-//   beep(a, 500);    
-//   beep(a, 500);
-//   beep(f, 350);
-//   beep(cH, 150);  
-//   beep(a, 500);
-//   beep(f, 350);
-//   beep(cH, 150);
-//   beep(a, 650);
-
-//   delay(500);
-
-//   beep(eH, 500);
-//   beep(eH, 500);
-//   beep(eH, 500);  
-//   beep(fH, 350);
-//   beep(cH, 150);
-//   beep(gS, 500);
-//   beep(f, 350);
-//   beep(cH, 150);
-//   beep(a, 650);
-
-//   delay(500);
-// }
-
-// void secondSection()
-// {
-//   beep(aH, 500);
-//   beep(a, 300);
-//   beep(a, 150);
-//   beep(aH, 500);
-//   beep(gSH, 325);
-//   beep(gH, 175);
-//   beep(fSH, 125);
-//   beep(fH, 125);    
-//   beep(fSH, 250);
-
-//   delay(325);
-
-//   beep(aS, 250);
-//   beep(dSH, 500);
-//   beep(dH, 325);  
-//   beep(cSH, 175);  
-//   beep(cH, 125);  
-//   beep(b, 125);  
-//   beep(cH, 250);  
-
-//   delay(350);
-// }
