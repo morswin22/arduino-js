@@ -34,7 +34,7 @@ class Snake {
     this.pos.x += this.dir.x;
     this.pos.y += this.dir.y;
     if (this.pos.x > this.w || this.pos.x < 0 || this.pos.y > this.h || this.pos.y < 0) {
-      console.log('Game over');
+      console.log('Game over :( Final score: '+this.len);
       this.dir.x = 0;
       this.dir.y = 0;
       this.alive = false;
@@ -52,8 +52,10 @@ class Snake {
     this.hisotry = this.history.reverse();
   }
   draw(table) {
-    for (let body of this.history) {
-      table[body.x][body.y] = 1;
+    if (this.alive) {
+      for (let body of this.history) {
+        table[body.x][body.y] = 1;
+      }
     }
     return table;
   }
