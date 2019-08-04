@@ -17,7 +17,7 @@ class Game {
     this.width = width;
     this.height = height;
     this.clearDisplay();
-    this.player = new Snake(3, 4, 2, this);
+    this.player = new Snake(4, 3, 2, this);
     this.candy = new Candy(width, height)
   }
   clearDisplay() {
