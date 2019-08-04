@@ -26,6 +26,23 @@ board.on("ready", function() {
     game.player.dir.right();
   })
 
+  // Use "a" and "d" to control the snake from the terminal
+  var stdin = process.stdin;
+  stdin.setRawMode( true );
+  stdin.resume();
+  stdin.setEncoding( 'utf8' );
+  stdin.on( 'data', function( key ){
+    if ( key === '\u0003' ) {
+      process.exit();
+    } else {
+      if (key == 'a') {
+        game.player.dir.left();
+      } else if (key == 'd') {
+        game.player.dir.right();
+      }
+    }
+  });
+
   matrix.on();
 
   setInterval(()=>{
